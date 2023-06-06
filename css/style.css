@@ -1,0 +1,144 @@
+/* font-family: 'Delius Unicase', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+
+/* 1. Базова картинка - 1кол 1ряд      g-item*/
+/* 2. Подвійна горизонталь - 2кол 1ряд g-item__col-dbl*/
+/* 3. Подвійна вертикаль - 1кол 2ряд   g-item__row-dbl*/
+/* 1. Full картинка - 2кол 2ряд        g-item__full*/
+
+@import url('./normalize.css');
+@import url('./vars.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: var(--main-font-family), sans-serif;
+    min-height: 100vh;
+    font-size: var(--font-size-main);
+    color: var(--font-color);
+}
+
+.main {
+    max-width: var(--width-container);
+    margin: 120px auto;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.title {
+    color: #000;
+    font-family: 'Delius Unicase', cursive;
+}
+
+.section {
+    margin-bottom: 120px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.g-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.g-item::before {
+    content: " ";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: 1;
+    transition: 0.6s;
+    z-index: 1;
+    background: linear-gradient(360deg,
+            #241F24 0%, #5b5b5b72 34.11%, #bbbac042 62.5%);
+}
+
+.g-item-img {
+    border-radius: 20px;
+}
+
+.g-item:hover::before {
+    opacity: 0;
+}
+
+.g-item-icons {
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.icon {
+    background: #e0e0e080;
+    padding: 6px 8px;
+    border: 1px solid #cbc6c6;
+    border-radius: 8px;
+}
+
+.g-item .icon {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.g-item:hover .icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.g-item .icon:hover {
+    background: #E0E0E0;
+}
+
+.g-item-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.g-item-date {
+    color: #E0E0E0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(370px, 1fr));
+    gap: 30px;
+}
+
+.g-item-col-dbl {
+    grid-column: span 2;
+}
+
+.g-item-row-dbl {
+    grid-row: span 2;
+}
+
+.g-item-full {
+    grid-column: span 2;
+    grid-row: span 2;
+}
