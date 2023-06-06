@@ -91,6 +91,7 @@ body {
     padding: 6px 8px;
     border: 1px solid #cbc6c6;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .g-item .icon {
