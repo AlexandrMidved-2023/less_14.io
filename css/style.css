@@ -1,11 +1,3 @@
-/* font-family: 'Delius Unicase', cursive; */
-/* font-family: 'Roboto', sans-serif; */
-
-/* 1. Базова картинка - 1кол 1ряд      g-item*/
-/* 2. Подвійна горизонталь - 2кол 1ряд g-item__col-dbl*/
-/* 3. Подвійна вертикаль - 1кол 2ряд   g-item__row-dbl*/
-/* 1. Full картинка - 2кол 2ряд        g-item__full*/
-
 @import url('./normalize.css');
 @import url('./vars.css');
 
